@@ -4,6 +4,8 @@ export default function SpotlightPage({
   pieces,
   isFavorite,
   onToggleFavorite,
+  slug,
+  artPiecesInfo,
 }) {
   return (
     <Spotlight
@@ -11,6 +13,8 @@ export default function SpotlightPage({
       showTitle={false}
       isFavorite={isFavorite}
       onToggleFavorite={onToggleFavorite}
+      slug={slug}
+      artPiecesInfo={artPiecesInfo}
     />
   );
 }

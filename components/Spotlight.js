@@ -6,6 +6,7 @@ export default function Spotlight({
   isFavorite,
   onToggleFavorite,
   slug,
+  artPiecesInfo,
 }) {
   const randomNumber = Math.floor(Math.random() * pieces.length);
   const randomArtwork = pieces[randomNumber];
@@ -16,6 +17,7 @@ export default function Spotlight({
       isFavorite={isFavorite}
       onToggleFavorite={onToggleFavorite}
       slug={slug}
+      artPiecesInfo={artPiecesInfo}
     />
   );
 }
