@@ -1,13 +1,19 @@
 import Layout from "@/components/Layout";
 import GlobalStyle from "../styles";
 import useSWR from "swr";
+import { useState } from "react";
 
 const url = "https://example-apis.vercel.app/api/art";
 
 export default function App({ Component, pageProps }) {
-  const fetcher = (...args) => fetch(...args).then((res) => res.json());
+  const [artPiecesInfo, setArtPiecesInfo] = useState([
+    { slug: "organge-red", isFavorite: false },
+  ]);
+
+  function handleToggleFavorite(slug) {}
 
   // fetching data
+  const fetcher = (...args) => fetch(...args).then((res) => res.json());
   const { data, error, isLoading } = useSWR(url, fetcher);
 
   // error und loading screen
@@ -16,7 +22,13 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <GlobalStyle />
-      <Component {...pageProps} pieces={data} />
+      <Component
+        {...pageProps}
+        pieces={data}
+        isFavorite={isFavorite}
+        onToggleFavorite={handleToggleFavorite}
+        slug={slug}
+      />
       <Layout />
     </>
   );
