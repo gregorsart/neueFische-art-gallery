@@ -5,21 +5,9 @@ export default function FavoriteButton({
   slug,
   artPiecesInfo,
 }) {
-  const info = jokesInfo.find((info) => info.id === id) ?? {
-    isFunny: false,
-  };
-  const { isFunny } = info;
-
-  console.log("artPiecesInfo", artPiecesInfo);
-
   const currentIsFavorite = artPiecesInfo.find(
-    (artwork) =>
-      artwork.slug === slug ?? {
-        isFavorite: false,
-      }
-  );
-
-  console.log("currentisFavouriteButton---", currentIsFavorite);
+    (artWork) => artWork.slug === slug
+  ) ?? { isFavorite: false };
   const { isFavorite } = currentIsFavorite;
   return (
     <button onClick={() => onToggleFavorite(slug)}>

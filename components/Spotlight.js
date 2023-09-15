@@ -1,22 +1,24 @@
+import { useEffect, useState } from "react";
 import ArtPiecePreview from "./ArtPiecePreview";
 
 export default function Spotlight({
   pieces,
   showTitle,
-  isFavorite,
   onToggleFavorite,
-  slug,
   artPiecesInfo,
 }) {
-  const randomNumber = Math.floor(Math.random() * pieces.length);
-  const randomArtwork = pieces[randomNumber];
+  const [artWork, setArtWork] = useState({});
+  useEffect(() => {
+    const randomNumber = Math.floor(Math.random() * pieces.length);
+    const randomArtwork = pieces[randomNumber];
+    setArtWork(randomArtwork);
+  }, []);
+
   return (
     <ArtPiecePreview
-      piece={randomArtwork}
+      piece={artWork}
       showTitle={showTitle}
-      isFavorite={isFavorite}
       onToggleFavorite={onToggleFavorite}
-      slug={slug}
       artPiecesInfo={artPiecesInfo}
     />
   );

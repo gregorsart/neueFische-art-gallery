@@ -5,7 +5,6 @@ export default function ArtPiecePreview({
   piece,
   showTitle,
   onToggleFavorite,
-  isFavorite,
   artPiecesInfo,
 }) {
   const { artist, name, imageSource, slug } = piece;
@@ -18,7 +17,6 @@ export default function ArtPiecePreview({
         <FavoriteButton
           slug={slug}
           onToggleFavorite={onToggleFavorite}
-          isFavorite={isFavorite}
           artPiecesInfo={artPiecesInfo}
         />
       </div>

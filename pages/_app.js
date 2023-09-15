@@ -10,18 +10,16 @@ export default function App({ Component, pageProps }) {
 
   // fetching data
   const { data, error, isLoading } = useSWR(url, fetcher);
-  const [slug, setSlug] = useState("");
   const [artPiecesInfo, setArtPiecesInfo] = useState([]);
 
+  // heart function
   function handleToggleFavorite(slug) {
-    console.log("slug---", slug, artPiecesInfo);
-    setSlug(slug);
     setArtPiecesInfo((artPiecesInfo) => {
       const info = artPiecesInfo.find((info) => info.slug === slug);
 
       if (info) {
         return artPiecesInfo.map((info) =>
-          info.slug === slug ? { ...info, isFavorite: !isFavorite } : info
+          info.slug === slug ? { ...info, isFavorite: !info.isFavorite } : info
         );
       }
 
@@ -29,8 +27,6 @@ export default function App({ Component, pageProps }) {
     });
   }
 
-  // const { isFavorite } = info;
-  // console.log("isFavourite---", isFavorite);
   // error und loading screen
   if (error) return <div>Failed to load</div>;
   if (isLoading) return <div>Loading...</div>;
@@ -42,7 +38,6 @@ export default function App({ Component, pageProps }) {
         pieces={data}
         // isFavorite={isFavorite}
         onToggleFavorite={handleToggleFavorite}
-        slug={slug}
         artPiecesInfo={artPiecesInfo}
       />
       <Layout />
