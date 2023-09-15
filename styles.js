@@ -12,6 +12,12 @@ export default createGlobalStyle`
     font-family: system-ui;
   }
 
+  button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
   ul {
     list-style: none;
   }

@@ -1,6 +1,11 @@
 import Image from "next/image";
-export default function ArtPieceDetails({ piece }) {
-  const { artist, name, imageSource, year, genre } = piece;
+import FavoriteButton from "./FavoriteButton";
+export default function ArtPieceDetails({
+  piece,
+  artPiecesInfo,
+  onToggleFavorite,
+}) {
+  const { artist, name, imageSource, year, genre, slug } = piece;
   return (
     <li>
       <Image src={imageSource} width={500} height={500} alt={name} />
@@ -9,6 +14,11 @@ export default function ArtPieceDetails({ piece }) {
         <p>by {artist}</p>
         <p>{year}</p>
         <p>{genre}</p>
+        <FavoriteButton
+          slug={slug}
+          onToggleFavorite={onToggleFavorite}
+          artPiecesInfo={artPiecesInfo}
+        />
       </div>
     </li>
   );
