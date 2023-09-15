@@ -36,7 +36,6 @@ export default function App({ Component, pageProps }) {
       <Component
         {...pageProps}
         pieces={data}
-        // isFavorite={isFavorite}
         onToggleFavorite={handleToggleFavorite}
         artPiecesInfo={artPiecesInfo}
       />
