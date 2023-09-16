@@ -1,6 +1,7 @@
 import Image from "next/image";
 import FavoriteButton from "./FavoriteButton";
 import styled from "styled-components";
+import Link from "next/link";
 
 export default function ArtPiecePreview({
   piece,
@@ -10,22 +11,24 @@ export default function ArtPiecePreview({
 }) {
   const { artist, name, imageSource, slug } = piece;
   return (
-    <StyledLi>
-      {imageSource && (
-        <StyledImage src={imageSource} width={500} height={500} alt={name} />
-      )}
-      {showTitle && <h2>{name}</h2>}
-      <StyledContainer>
-        <p>
-          <StyledSpan>by</StyledSpan> {artist}
-        </p>
-        <FavoriteButton
-          slug={slug}
-          onToggleFavorite={onToggleFavorite}
-          artPiecesInfo={artPiecesInfo}
-        />
-      </StyledContainer>
-    </StyledLi>
+    <Link href={`/art-pieces/${slug}`}>
+      <StyledLi>
+        {imageSource && (
+          <StyledImage src={imageSource} width={500} height={500} alt={name} />
+        )}
+        {showTitle && <h2>{name}</h2>}
+        <StyledContainer>
+          <p>
+            <StyledSpan>by</StyledSpan> {artist}
+          </p>
+          <FavoriteButton
+            slug={slug}
+            onToggleFavorite={onToggleFavorite}
+            artPiecesInfo={artPiecesInfo}
+          />
+        </StyledContainer>
+      </StyledLi>
+    </Link>
   );
 }
 

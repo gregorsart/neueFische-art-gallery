@@ -38,7 +38,8 @@ export default createGlobalStyle`
   }
 
   main {
-    margin-top: 8rem;
+    min-height: 85vh;
+    margin-top: 5rem;
     margin-bottom: 8rem;
     display: flex;
     flex-direction: column;
@@ -60,6 +61,7 @@ export default createGlobalStyle`
     font-size: 1.2rem;
     font-weight: 300;
     padding: 0 .4rem;
+    margin-bottom: 1rem;
   }
 
 `;
