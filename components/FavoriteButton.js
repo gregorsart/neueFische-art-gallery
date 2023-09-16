@@ -15,15 +15,15 @@ export default function FavoriteButton({
         <Image
           src="/assets/heart-solid.svg"
           alt="heart"
-          width="40"
-          height="40"
+          width="30"
+          height="30"
         />
       ) : (
         <Image
           src="/assets/heart-outline.svg"
           alt="heart"
-          width="40"
-          height="40"
+          width="30"
+          height="30"
         />
       )}
     </button>
