@@ -12,14 +12,16 @@ export default function Spotlight({
     const randomNumber = Math.floor(Math.random() * pieces.length);
     const randomArtwork = pieces[randomNumber];
     setArtWork(randomArtwork);
-  }, []);
+  }, [pieces]);
 
   return (
-    <ArtPiecePreview
-      piece={artWork}
-      showTitle={showTitle}
-      onToggleFavorite={onToggleFavorite}
-      artPiecesInfo={artPiecesInfo}
-    />
+    <>
+      <ArtPiecePreview
+        piece={artWork}
+        showTitle={showTitle}
+        onToggleFavorite={onToggleFavorite}
+        artPiecesInfo={artPiecesInfo}
+      />
+    </>
   );
 }

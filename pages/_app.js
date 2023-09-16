@@ -6,14 +6,14 @@ import { useState } from "react";
 const url = "https://example-apis.vercel.app/api/art";
 
 export default function App({ Component, pageProps }) {
-  const fetcher = (...args) => fetch(...args).then((res) => res.json());
-
   // fetching data
+  const fetcher = (...args) => fetch(...args).then((res) => res.json());
   const { data, error, isLoading } = useSWR(url, fetcher);
   const [artPiecesInfo, setArtPiecesInfo] = useState([]);
 
   // heart function
   function handleToggleFavorite(slug) {
+    console.log("click");
     setArtPiecesInfo((artPiecesInfo) => {
       const info = artPiecesInfo.find((info) => info.slug === slug);
 
@@ -33,13 +33,14 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <GlobalStyle />
-      <Component
-        {...pageProps}
-        pieces={data}
-        onToggleFavorite={handleToggleFavorite}
-        artPiecesInfo={artPiecesInfo}
-      />
-      <Layout />
+      <Layout>
+        <Component
+          {...pageProps}
+          pieces={data}
+          onToggleFavorite={handleToggleFavorite}
+          artPiecesInfo={artPiecesInfo}
+        />
+      </Layout>
     </>
   );
 }

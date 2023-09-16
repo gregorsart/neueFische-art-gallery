@@ -1,9 +1,9 @@
+import styled from "styled-components";
 import ArtPiecePreview from "./ArtPiecePreview";
 export default function ArtPieces({ pieces, artPiecesInfo, onToggleFavorite }) {
   return (
     <>
-      <h1>Art Gallery</h1>
-      <ul>
+      <StyledUl>
         {pieces.map((piece) => {
           const { slug } = piece;
           return (
@@ -16,7 +16,13 @@ export default function ArtPieces({ pieces, artPiecesInfo, onToggleFavorite }) {
             />
           );
         })}
-      </ul>
+      </StyledUl>
     </>
   );
 }
+
+const StyledUl = styled.ul`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+`;
