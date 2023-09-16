@@ -13,7 +13,6 @@ export default function App({ Component, pageProps }) {
 
   // heart function
   function handleToggleFavorite(slug) {
-    console.log("click");
     setArtPiecesInfo((artPiecesInfo) => {
       const info = artPiecesInfo.find((info) => info.slug === slug);
 

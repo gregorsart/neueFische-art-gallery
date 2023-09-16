@@ -6,7 +6,6 @@ export default function ArtPieceDetails({
   artPiecesInfo,
   onToggleFavorite,
 }) {
-  console.log("piece---", piece);
   const { artist, name, imageSource, year, genre, slug } = piece;
   return (
     <>
