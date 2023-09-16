@@ -15,7 +15,8 @@ export default function Header() {
 const StyledHeader = styled.header`
   position: fixed;
   top: 0;
-  width: 100%;
+  width: var(--max-width);
+  max-width: var(--max-width);
   padding: 1rem var(--main-spacing);
   background-color: black;
   display: flex;

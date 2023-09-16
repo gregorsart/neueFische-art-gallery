@@ -36,13 +36,15 @@ const StyledNav = styled.nav`
   background-color: black;
   position: fixed;
   bottom: 0;
-  width: 100%;
+  width: var(--max-width);
+  max-width: var(--max-width);
   font-size: 1.2em;
   text-align: center;
 `;
 
 const StyledUl = styled.ul`
   height: 100%;
+  width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
@@ -53,6 +55,7 @@ const StyledLi = styled.li`
     props.$primary ? "var(--color-lightgray)" : "black"};
   color: ${(props) => (props.$primary ? "black" : "white")};
   height: 100%;
+  width: 100%;
 `;
 
 const StyledLink = styled(Link)`

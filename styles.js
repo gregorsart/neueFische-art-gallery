@@ -13,9 +13,10 @@ export default createGlobalStyle`
     padding: 0;
   }
 
-:root {--main-spacing: 2rem; --color-lightgray: #E5E4E2}
+:root {--main-spacing: 2rem; --color-lightgray: #E5E4E2; --max-width: 22.5rem}
 
   body {
+
     line-height: 1.5;
     font-family: ${inter.style.fontFamily}; 
     -webkit-font-smoothing: antialiased;
