@@ -11,24 +11,24 @@ export default function ArtPiecePreview({
 }) {
   const { artist, name, imageSource, slug } = piece;
   return (
-    <Link href={`/art-pieces/${slug}`}>
-      <StyledLi>
+    <StyledLi>
+      <StyledLink href={`/art-pieces/${slug}`}>
         {imageSource && (
           <StyledImage src={imageSource} width={500} height={500} alt={name} />
         )}
         {showTitle && <h2>{name}</h2>}
-        <StyledContainer>
-          <p>
-            <StyledSpan>by</StyledSpan> {artist}
-          </p>
-          <FavoriteButton
-            slug={slug}
-            onToggleFavorite={onToggleFavorite}
-            artPiecesInfo={artPiecesInfo}
-          />
-        </StyledContainer>
-      </StyledLi>
-    </Link>
+      </StyledLink>
+      <StyledContainer>
+        <p>
+          <StyledSpan>by</StyledSpan> {artist}
+        </p>
+        <FavoriteButton
+          slug={slug}
+          onToggleFavorite={onToggleFavorite}
+          artPiecesInfo={artPiecesInfo}
+        />
+      </StyledContainer>
+    </StyledLi>
   );
 }
 
@@ -45,6 +45,15 @@ const StyledLi = styled.li`
   border: 2px solid var(--color-lightgray);
   border-radius: 0.4rem;
   padding: 1rem;
+  width: var(--max-width);
+  max-width: var(--max-width);
+`;
+
+const StyledLink = styled(Link)`
+  color: black;
+  text-decoration: underline;
+  text-underline-offset: 0.3rem;
+  text-decoration-color: turquoise;
 `;
 
 const StyledImage = styled(Image)`
