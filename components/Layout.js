@@ -13,6 +13,8 @@ export default function Layout({ children }) {
 }
 
 const StyledContainer = styled.div`
+  position: relative;
   display: flex;
   justify-content: center;
+  align-items: center;
 `;

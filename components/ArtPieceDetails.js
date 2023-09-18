@@ -48,9 +48,13 @@ const StyledH2 = styled.h2`
   text-transform: uppercase;
   width: 100%;
   text-align: center;
+  width: var(--max-width);
+  max-width: var(--max-width);
 `;
 
 const StyledLi = styled.li`
+  width: var(--max-width);
+  max-width: var(--max-width);
   display: flex;
   flex-direction: column;
   justify-content: center;

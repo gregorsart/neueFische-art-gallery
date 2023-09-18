@@ -16,7 +16,6 @@ export default createGlobalStyle`
 :root {--main-spacing: 2rem; --color-lightgray: #E5E4E2; --max-width: 22.5rem}
 
   body {
-
     line-height: 1.5;
     font-family: ${inter.style.fontFamily}; 
     -webkit-font-smoothing: antialiased;
@@ -39,13 +38,12 @@ export default createGlobalStyle`
   }
 
   main {
-    min-height: 85vh;
     margin-top: 5rem;
-    margin-bottom: 8rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
   }
 
   button {
